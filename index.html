@@ -3,24 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Counter App</title>
     <style>
         body {
             background-color: black;
             color: white;
         }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
     </style>
 </head>
 <body>
-    Hello World
-    <button onclick="handleClick()">
-        Click Me
-    </button>
+    <div class="container">
+        <h1>Counter: <span id="counter">0</span></h1>
+        <button onclick="increment()">Click Me for Increment</button>
+        <button onclick="decrement()">Click Me for Decrement</button>
+    </div>
 
     <script>
-        console.log('Hello World');
-        const handleClick = () => {
-            console.log('Button Clicked');
+        let count = 0;
+
+        // Function to update the displayed counter value
+        function updateCounter() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        // Increment function
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        // Decrement function
+        function decrement() {
+            count--;
+            updateCounter();
         }
     </script>
 </body>
